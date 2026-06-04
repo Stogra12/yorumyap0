@@ -65,11 +65,11 @@ const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 
 function searchLocation() {
-    const query = searchInput.value.trim(); // Boşlukları temizleyerek yazıyı al
+    const query = searchInput.value.trim(); 
     
     if (query !== "") {
-        // DOĞRU GOOGLE MAPS ARAMA LİNKİ
-        const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(query)}`;
+        // Doğru ve Resmi Google Maps Arama Linki
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
         
         // Linki yeni bir sekmede aç
         window.open(mapsUrl, '_blank');
