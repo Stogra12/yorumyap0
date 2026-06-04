@@ -1,20 +1,45 @@
-<section class="review-section">
-    <h3>Mekanı Değerlendir</h3>
-    
-    <div class="star-rating" id="stars">
-        <span class="star" data-value="1">★</span>
-        <span class="star" data-value="2">★</span>
-        <span class="star" data-value="3">★</span>
-        <span class="star" data-value="4">★</span>
-        <span class="star" data-value="5">★</span>
-    </div>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YerGez - Mekan Yorumları</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="review-form">
-        <textarea id="comment-text" placeholder="Bu mekan hakkında ne düşünüyorsunuz?" rows="4"></textarea>
-        <button id="submit-review">Yorumu Gönder</button>
-    </div>
-
-    <div class="comments-list" id="comments-list">
-        <h3>Son Yorumlar</h3>
+    <header>
+        <div class="logo">🌍 YerGez</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Mekan, şehir veya turistik yer ara...">
+            <button>Ara</button>
         </div>
-</section>
+    </header>
+
+    <main>
+        <section class="review-section">
+            <h3 style="margin-bottom: 15px;">Mekanı Değerlendir</h3>
+            
+            <div class="star-rating" id="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <div class="review-form">
+                <textarea id="comment-text" placeholder="Bu mekan hakkında ne düşünüyorsunuz?" rows="4"></textarea>
+                <button id="submit-review">Yorumu Gönder</button>
+            </div>
+
+            <div class="comments-list" id="comments-list">
+                <h3>Son Yorumlar</h3>
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
