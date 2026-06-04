@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <header>
-      <header>
+   <header>
         <div class="logo">🌍 YerGez</div>
         
         <div class="search-bar">
@@ -17,12 +16,14 @@
             <button id="searchBtn">Ara</button>
         </div>
 
-        <nav class="top-menu">
-            <a href="#" class="menu-link">Öneri & Şikayet</a>
-            <a href="#" class="menu-btn login-btn">Üye Girişi</a>
-            <a href="#" class="menu-btn register-btn">Kayıt Ol</a>
-        </nav>
-    </header>
+        <div class="hamburger-container">
+            <button id="hamburgerBtn">☰</button>
+            <nav id="dropdownMenu" class="hidden-menu">
+                <a href="#" id="openLogin">Üye Girişi</a>
+                <a href="#" id="openRegister">Kayıt Ol</a>
+                <a href="#" id="openFeedback">Öneri & Şikayet</a>
+            </nav>
+        </div>
     </header>
 
    <section class="hero-section">
