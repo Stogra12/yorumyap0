@@ -3,191 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YerGez - Mekan Yorumları</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <title>YerGez - Premium Keşif</title>
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
     <div id="pageOverlay" class="hidden-element"></div>
 
-    <header>
-        <div class="logo">🌍 YerGez</div>
+    <header class="premium-header">
+        <div class="logo">
+            <span class="logo-icon">∽</span> YerGez
+        </div>
         
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Haritada görmek için mekan ara...">
-            <button id="searchBtn">Ara</button>
-        </div>
+            <span>🔍</span>
+            <input type="text" id="searchInput" placeholder="Keşfetmek için mekan ara...">
+            <button id="searchBtn" style="display: none;">Ara</button> </div>
 
-        <div class="header-right">
-            <button id="hamburgerBtn">☰</button>
-        </div>
+        <nav class="top-nav">
+            <a href="index.html" class="active-link">Keşfet</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="blog.html">Blog</a>
+            <a href="#" id="openLogin" class="login-btn">Giriş Yap</a>
+        </nav>
+        
+        <button id="hamburgerBtn" class="mobile-menu-btn">☰</button>
     </header>
 
-    <nav id="sideMenu" class="side-menu">
-        <button id="closeMenuBtn" class="close-btn">×</button>
-        <h2>Menü</h2>
-        <a href="#" id="openLogin">Üye Girişi</a>
-        <a href="#" id="openRegister">Kayıt Ol</a>
-        <a href="#" id="openFeedback">Öneri & Şikayet</a>
-    </nav>
-
-    <section class="hero-section">
+    <section class="premium-hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Keşfet, Puanla, Haritada Bul!</h1>
-            <p>En sevdiğin mekanları değerlendir ve diğer gezginlere ilham ol.</p>
+            <h1 class="massive-text">KEŞFET</h1>
+            <p class="subtitle">Doğanın ve Tarihin Harikalarını Bizimle Deneyimle.</p>
+        </div>
+        
+        <div class="hero-features-bar">
+            <div class="feature-item">
+                <span class="f-icon">📍</span> <p>Yeni rotalar<br><span>kendini bul</span></p>
+            </div>
+            <div class="feature-item">
+                <span class="f-icon">🌍</span> <p>Türkiye'yi keşfet<br><span>maceraya atıl</span></p>
+            </div>
+            <div class="feature-item">
+                <span class="f-icon">⭐</span> <p>Gerçek yorumlar<br><span>güvenilir rehber</span></p>
+            </div>
+            <div class="feature-item">
+                <span class="f-icon">🎒</span> <p>Sınırları aş<br><span>yeni duygular</span></p>
+            </div>
         </div>
     </section>
 
-    <main class="main-container">
+    <main class="dark-main">
         
-        <aside class="left-sidebar">
-            <section class="review-section">
-                <h3 style="margin-bottom: 15px; text-align: center;">Yeni Mekan Değerlendir</h3>
-                <div class="star-rating" id="stars" style="text-align: center;">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
+        <section class="wonders-section">
+            <div class="section-header">
+                <h2>Doğanın ve Tarihin Harikaları</h2>
+                <p>Dünyanın dört bir yanındaki gezginler için en otantik içerikleri sunuyoruz.</p>
+            </div>
+
+            <div class="tall-cards-grid">
+                <div class="tall-card">
+                    <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=600&q=80" alt="Galata">
+                    <div class="card-overlay">
+                        <h3>Galata Kulesi</h3>
+                        <p>İstanbul • ⭐⭐⭐⭐⭐</p>
+                    </div>
                 </div>
-                <div class="review-form">
-                    <textarea id="comment-text" placeholder="Ne düşünüyorsunuz?" rows="4"></textarea>
-                    <button id="submit-review">Yorumu Gönder</button>
+                <div class="tall-card">
+                    <img src="https://images.unsplash.com/photo-1528644498302-861a34a41300?auto=format&fit=crop&w=600&q=80" alt="Kapadokya">
+                    <div class="card-overlay">
+                        <h3>Kapadokya</h3>
+                        <p>Nevşehir • ⭐⭐⭐⭐⭐</p>
+                    </div>
                 </div>
-                <div class="comments-list" id="comments-list">
-                    <h3>Eklenen Yorumlar</h3>
+                <div class="tall-card">
+                    <img src="https://images.unsplash.com/photo-1524230572899-a752b6515c0e?auto=format&fit=crop&w=600&q=80" alt="Pamukkale">
+                    <div class="card-overlay">
+                        <h3>Pamukkale</h3>
+                        <p>Denizli • ⭐⭐⭐⭐☆</p>
+                    </div>
                 </div>
-            </section>
-        </aside>
-
-        <section class="right-content">
-            <section class="favorites-section">
-                <h2 style="margin-bottom: 30px; color: #f1c40f;">⭐ Popüler Mekanlar ve Yorumlar</h2>
-                <div class="places-grid">
-                    
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/galata,tower" alt="Galata">
-                        <div class="card-content">
-                            <h3>Galata Kulesi</h3><p class="location">İstanbul</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Ayşe Y.:</strong> Harika manzara!</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/iskenderun,beach" alt="İskenderun">
-                        <div class="card-content">
-                            <h3>İskenderun Sahili</h3><p class="location">Hatay</p>
-                            <div class="star-rating-static">★★★★☆</div>
-                            <div class="old-comment"><p><strong>Mehmet T.:</strong> Çok dinlendirici.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/cappadocia,balloon" alt="Kapadokya">
-                        <div class="card-content">
-                            <h3>Kapadokya Balon Turu</h3><p class="location">Nevşehir</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Zeynep K.:</strong> Büyüleyiciydi!</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/pamukkale" alt="Pamukkale">
-                        <div class="card-content">
-                            <h3>Pamukkale Travertenleri</h3><p class="location">Denizli</p>
-                            <div class="star-rating-static">★★★★☆</div>
-                            <div class="old-comment"><p><strong>Burak C.:</strong> Mutlaka görülmeli.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/ephesus" alt="Efes">
-                        <div class="card-content">
-                            <h3>Efes Antik Kenti</h3><p class="location">İzmir</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Elif D.:</strong> Tarihin içinde yürümek gibi.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/hagia,sophia" alt="Ayasofya">
-                        <div class="card-content">
-                            <h3>Ayasofya Camii</h3><p class="location">İstanbul</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Kerem S.:</strong> Atmosferi muazzam.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/oludeniz" alt="Ölüdeniz">
-                        <div class="card-content">
-                            <h3>Ölüdeniz</h3><p class="location">Muğla</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Ceren B.:</strong> Suyu cam gibi berrak.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/nemrut" alt="Nemrut">
-                        <div class="card-content">
-                            <h3>Nemrut Dağı</h3><p class="location">Adıyaman</p>
-                            <div class="star-rating-static">★★★★☆</div>
-                            <div class="old-comment"><p><strong>Oğuz V.:</strong> Güneşin doğuşu efsane.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/sumela" alt="Sümela">
-                        <div class="card-content">
-                            <h3>Sümela Manastırı</h3><p class="location">Trabzon</p>
-                            <div class="star-rating-static">★★★★★</div>
-                            <div class="old-comment"><p><strong>Büşra N.:</strong> Dağın yamacında bir harika.</p></div>
-                        </div>
-                    </article>
-
-                    <article class="place-card">
-                        <img src="https://loremflickr.com/600/400/salda,lake" alt="Salda">
-                        <div class="card-content">
-                            <h3>Salda Gölü</h3><p class="location">Burdur</p>
-                            <div class="star-rating-static">★★★★☆</div>
-                            <div class="old-comment"><p><strong>Emre A.:</strong> Türkiye'nin Maldivleri.</p></div>
-                        </div>
-                    </article>
-
+                <div class="tall-card">
+                    <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="Ölüdeniz">
+                    <div class="card-overlay">
+                        <h3>Ölüdeniz</h3>
+                        <p>Muğla • ⭐⭐⭐⭐⭐</p>
+                    </div>
                 </div>
-            </section>
+            </div>
         </section>
-    </main>
 
-    <footer style="text-align: center; padding: 20px; color: #888;">
-        <p>Emirhan Tuğra Balcı -- 257351060</p>
-    </footer>
-
-    <div id="loginModal" class="modal-box hidden-element">
-        <button class="modal-close">×</button>
-        <h3>Üye Girişi</h3>
-        <input type="email" placeholder="E-posta Adresiniz">
-        <input type="password" placeholder="Şifreniz">
-        <button class="modal-submit" onclick="alert('Giriş başarılı!')">Giriş Yap</button>
-    </div>
-
-    <div id="registerModal" class="modal-box hidden-element">
-        <button class="modal-close">×</button>
-        <h3>Kayıt Ol</h3>
-        <input type="text" placeholder="Adınız Soyadınız">
-        <input type="email" placeholder="E-posta">
-        <input type="password" placeholder="Şifre">
-        <button class="modal-submit" onclick="alert('Kayıt başarılı!')">Kayıt Ol</button>
-    </div>
-
-    <div id="feedbackModal" class="modal-box hidden-element">
-        <button class="modal-close">×</button>
-        <h3>Öneri & Şikayet</h3>
-        <textarea placeholder="Mesajınız..." rows="4"></textarea>
-        <button class="modal-submit" onclick="alert('Mesajınız alındı!')">Gönder</button>
-    </div>
-
-    <script src="script.js?v=3"></script>
-</body>
-</html>
+        <section class="split-section">
+            <div class="split-images">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80" class="img-large" alt="Travel">
+            </div>
+            
+            <div class="split-text-form">
+                <h2>Senin için mükemmel bir tatili<br>burada planla!</h2>
+                <p>Gittiğin yerleri değerlendirerek diğer kullanıcılara ilham olabilirsin. Yorumların anında listelenir.</p>
+                
+                <div class="dark-review-form">
+                    <div class="star-rating" id="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★
