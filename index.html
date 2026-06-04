@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YerGez - Premium Keşif</title>
-    <link rel="stylesheet" href="style.css?v=7">
+    <!-- v=8 yaparak önbelleği zorla yeniliyoruz -->
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -18,7 +19,16 @@
             <input type="text" id="searchInput" placeholder="Keşfetmek için mekan ara...">
         </div>
 
-       <nav class="top-nav">
+        <!-- 6 SEKMELİ YENİ MENÜMÜZ -->
+        <nav class="top-nav">
+            <a href="index.html" class="active-link">Keşfet</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="mekanlar.html">Mekanlar</a>
+            <a href="blog.html">Blog</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="sss.html">S.S.S.</a>
+            <a href="#" id="openLogin" class="login-btn">Giriş Yap</a>
+        </nav>
     </header>
 
     <section class="premium-hero">
@@ -51,4 +61,129 @@
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1528646985452-3e284f18378d?auto=format&fit=crop&w=600&q=80" alt="Efes"><div class="card-overlay"><h3>Efes Antik Kenti</h3><p>İzmir • ⭐⭐⭐⭐⭐</p></div></div>
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=600&q=80" alt="Ayasofya"><div class="card-overlay"><h3>Ayasofya</h3><p>İstanbul • ⭐⭐⭐⭐⭐</p></div></div>
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="Ölüdeniz"><div class="card-overlay"><h3>Ölüdeniz</h3><p>Muğla • ⭐⭐⭐⭐⭐</p></div></div>
-                <div class="tall-card"><img src="
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1589830504106-96ec11d95e80?auto=format&fit=crop&w=600&q=80" alt="Nemrut"><div class="card-overlay"><h3>Nemrut Dağı</h3><p>Adıyaman • ⭐⭐⭐⭐☆</p></div></div>
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1585144860106-998ca0829315?auto=format&fit=crop&w=600&q=80" alt="Sümela"><div class="card-overlay"><h3>Sümela Manastırı</h3><p>Trabzon • ⭐⭐⭐⭐⭐</p></div></div>
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1610427670395-8120ecce800a?auto=format&fit=crop&w=600&q=80" alt="Salda"><div class="card-overlay"><h3>Salda Gölü</h3><p>Burdur • ⭐⭐⭐⭐☆</p></div></div>
+            </div>
+        </section>
+
+        <section class="split-section">
+            <div class="split-images">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80" class="img-large" alt="Travel">
+            </div>
+            
+            <div class="split-text-form">
+                <h2>Senin için mükemmel bir tatili<br>burada planla!</h2>
+                <p>Gittiğin yerleri değerlendirerek diğer kullanıcılara ilham olabilirsin.</p>
+                
+                <div class="dark-review-form">
+                    <div class="star-rating" id="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <textarea id="comment-text" placeholder="Deneyimlerini bizimle paylaş..." rows="3"></textarea>
+                    <button id="submit-review" class="neon-btn">Yorumu Gönder</button>
+                </div>
+                
+                <div id="comments-list" class="recent-comments"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dark-footer">
+        <p>Emirhan Tuğra Balcı -- 257351060</p>
+    </footer>
+
+    <div id="loginModal" class="modal-box hidden-element">
+        <button class="modal-close">×</button>
+        <h3>Sisteme Giriş</h3>
+        <input type="email" placeholder="E-posta Adresiniz">
+        <input type="password" placeholder="Şifreniz">
+        <button class="modal-submit" onclick="alert('Giriş başarılı!')">Giriş Yap</button>
+    </div>
+
+    <!-- TIKIR TIKIR ÇALIŞAN JS KODLARI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            alert("Hazırlayan: Emirhan Tuğra Balcı -- 257351060\nYerGez Premium'a Hoş Geldiniz!");
+
+            const stars = document.querySelectorAll('.star');
+            const submitBtn = document.getElementById('submit-review');
+            const commentText = document.getElementById('comment-text');
+            const commentsList = document.getElementById('comments-list');
+            let selectedRating = 0;
+
+            if (stars.length > 0 && submitBtn) {
+                stars.forEach(star => {
+                    star.addEventListener('click', function() {
+                        selectedRating = parseInt(this.getAttribute('data-value'));
+                        stars.forEach(s => {
+                            s.classList.toggle('active', parseInt(s.getAttribute('data-value')) <= selectedRating);
+                        });
+                    });
+                });
+
+                submitBtn.addEventListener('click', function() {
+                    if (selectedRating === 0 || commentText.value.trim() === "") {
+                        alert("Lütfen puan verin ve yorum yazın!");
+                        return;
+                    }
+                    let starIcons = "★".repeat(selectedRating) + "☆".repeat(5 - selectedRating);
+                    const div = document.createElement('div');
+                    div.className = 'single-comment';
+                    div.innerHTML = `<div class="comment-stars">${starIcons}</div><p style="color: white;"><strong>Ziyaretçi:</strong> ${commentText.value}</p>`;
+                    
+                    commentsList.prepend(div);
+                    commentText.value = ""; selectedRating = 0;
+                    stars.forEach(s => s.classList.remove('active'));
+                });
+            }
+
+            const searchInput = document.getElementById('searchInput');
+            function searchLocation() {
+                if (searchInput && searchInput.value.trim() !== "") {
+                    window.open('https://www.google.com/maps?q=' + encodeURIComponent(searchInput.value.trim()), '_blank');
+                    searchInput.value = '';
+                } else {
+                    alert("Lütfen aramak için bir mekan girin!");
+                }
+            }
+            if (searchInput) {
+                searchInput.addEventListener('keypress', e => { 
+                    if(e.key === 'Enter') searchLocation(); 
+                });
+            }
+
+            const openLogin = document.getElementById('openLogin');
+            const loginModal = document.getElementById('loginModal');
+            const pageOverlay = document.getElementById('pageOverlay');
+            const closeBtns = document.querySelectorAll('.modal-close');
+
+            function openModal(e) {
+                if(e) e.preventDefault();
+                if(loginModal && pageOverlay) {
+                    loginModal.classList.remove('hidden-element');
+                    pageOverlay.classList.remove('hidden-element');
+                }
+            }
+
+            function closeModal() {
+                if(loginModal && pageOverlay) {
+                    loginModal.classList.add('hidden-element');
+                    pageOverlay.classList.add('hidden-element');
+                }
+            }
+
+            if (openLogin) openLogin.addEventListener('click', openModal);
+            if (pageOverlay) pageOverlay.addEventListener('click', closeModal);
+            if (closeBtns.length > 0) {
+                closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            }
+        });
+    </script>
+</body>
+</html>
