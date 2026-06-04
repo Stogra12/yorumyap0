@@ -104,4 +104,65 @@ html, body { background-color: var(--bg-dark); color: var(--text-light); overflo
 .star-rating { font-size: 30px; color: #444; cursor: pointer; margin-bottom: 15px; }
 .star-rating .star.active { color: var(--neon-accent); }
 .dark-review-form textarea {
-    width: 100%; background: transparent
+    width: 100%; background: transparent; border: 1px solid #333; color: white;
+    padding: 15px; border-radius: 8px; margin-bottom: 20px; resize: none; font-family: inherit;
+}
+.dark-review-form textarea:focus { border-color: var(--neon-accent); outline: none; }
+.neon-btn {
+    background: var(--neon-accent); color: black; font-weight: bold; border: none;
+    padding: 15px 30px; border-radius: 30px; cursor: pointer; transition: 0.3s; width: 100%;
+}
+.neon-btn:hover { background: #bfe038; box-shadow: 0 0 15px rgba(212, 243, 74, 0.4); }
+
+.recent-comments { margin-top: 30px; width: 100%; }
+.single-comment { border-left: 3px solid var(--neon-accent); padding-left: 15px; margin-bottom: 15px; }
+.comment-stars { color: var(--neon-accent); font-size: 14px; margin-bottom: 5px; }
+
+/* --- FOOTER & MODAL --- */
+.dark-footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: #555; margin-top: 50px; width: 100%; }
+
+#pageOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 900; }
+.modal-box {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid #333;
+    z-index: 1001; width: 90%; max-width: 400px; display: flex; flex-direction: column; gap: 15px;
+}
+.modal-box h3 { text-align: center; color: white; margin-bottom: 10px; }
+.modal-box input { background: #111; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; outline: none; width: 100%; }
+.modal-submit { background: var(--neon-accent); color: black; font-weight: bold; padding: 15px; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
+.modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+/* ----------------------------------------------------- */
+/* --- 📱 MOBİL UYUM (RESPONSIVE) KESİN ÇÖZÜM --- */
+/* ----------------------------------------------------- */
+@media (max-width: 950px) {
+    /* Header'ı serbest bırakıyoruz ki taşma yapmasın */
+    .premium-header { 
+        position: relative; /* Absolute'u kapatıp sayfaya oturtuyoruz */
+        flex-direction: column; 
+        gap: 20px; 
+        padding: 20px 15px; 
+        background: var(--bg-dark); 
+    }
+    
+    /* Arama çubuğu tam ekran */
+    .search-bar { width: 100%; max-width: 100%; justify-content: space-between; }
+    .search-bar input { width: 100%; }
+    
+    /* Menüleri hizalayıp sığdırıyoruz */
+    .top-nav { gap: 10px; width: 100%; }
+    .top-nav a { font-size: 13px; padding: 5px; }
+    .login-btn { width: 100%; text-align: center; margin-top: 10px; }
+    
+    /* Ana yazı boyutları */
+    .massive-text { font-size: 16vw; margin-top: 20px; }
+    .premium-hero { min-height: 50vh; height: auto; padding: 40px 0; }
+    .hero-features-bar { display: none; } 
+    
+    .tall-card { height: 350px; }
+    .section-header h2 { font-size: 28px; line-height: 1.2; }
+    .split-text-form h2 { font-size: 26px; }
+    
+    /* İkiye bölünmüş tasarımı alt alta alıyoruz */
+    .split-section { padding: 40px 5%; }
+}
