@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Premium Keşif</title>
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+    <div id="pageOverlay" class="hidden-element"></div>
+
+    <header class="premium-header">
+        <div class="logo"><span class="logo-icon">∽</span> YerGez</div>
+        <nav class="top-nav">
+            <a href="index.html">Keşfet</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="mekanlar.html">Mekanlar</a>
+            <a href="blog.html">Blog</a>
+            <a href="iletisim.html" class="active-link">İletişim</a>
+            <a href="sss.html">S.S.S.</a>
+            <a href="#" id="openLogin" class="login-btn">Giriş Yap</a>
+        </nav>
+    </header>
+
+    <section class="premium-hero" style="min-height: 400px; height: 50vh;">
+        <div class="hero-bg" style="background: linear-gradient(rgba(18,20,24,0.8), rgba(18,20,24,1)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
+        <div class="hero-content" style="margin-top: 60px;">
+            <h1 class="massive-text" style="font-size: 6vw;">BİZE ULAŞIN</h1>
+        </div>
+    </section>
+
+    <main class="dark-main" style="padding: 60px 10%; display: flex; justify-content: center;">
+        <div class="dark-review-form" style="width: 100%; max-width: 600px;">
+            <h2 style="color: var(--text-light); margin-bottom: 20px; text-align: center;">İletişim Formu</h2>
+            <input type="text" placeholder="Adınız Soyadınız" style="width: 100%; background: transparent; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; outline: none;">
+            <input type="email" placeholder="E-posta Adresiniz" style="width: 100%; background: transparent; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; outline: none;">
+            <textarea placeholder="Mesajınızı buraya yazın..." rows="5" style="width: 100%; background: transparent; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; outline: none; resize: none;"></textarea>
+            <button class="neon-btn" style="width: 100%;" onclick="alert('Mesajınız başarıyla iletildi!')">Mesajı Gönder</button>
+        </div>
+    </main>
+
+    <footer class="dark-footer">
+        <p>Emirhan Tuğra Balcı -- 257351060</p>
+    </footer>
+
+    <!-- GİRİŞ MODALI VE KISA JS -->
+    <div id="loginModal" class="modal-box hidden-element">
+        <button class="modal-close">×</button>
+        <h3>Sisteme Giriş</h3>
+        <input type="email" placeholder="E-posta Adresiniz">
+        <input type="password" placeholder="Şifreniz">
+        <button class="modal-submit" onclick="alert('Giriş başarılı!')">Giriş Yap</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const openLogin = document.getElementById('openLogin');
+            const loginModal = document.getElementById('loginModal');
+            const pageOverlay = document.getElementById('pageOverlay');
+            const closeBtns = document.querySelectorAll('.modal-close');
+
+            if (openLogin) openLogin.addEventListener('click', e => { e.preventDefault(); loginModal.classList.remove('hidden-element'); pageOverlay.classList.remove('hidden-element'); });
+            const closeModal = () => { loginModal.classList.add('hidden-element'); pageOverlay.classList.add('hidden-element'); };
+            if (pageOverlay) pageOverlay.addEventListener('click', closeModal);
+            closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+        });
+    </script>
+</body>
+</html>
