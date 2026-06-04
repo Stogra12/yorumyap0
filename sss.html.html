@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.S.S. - YerGez</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <div id="pageOverlay" class="hidden-element"></div>
+
+    <header>
+        <div class="logo">🌍 YerGez</div>
+        <div class="header-right"><button id="hamburgerBtn">☰</button></div>
+    </header>
+
+    <nav id="sideMenu" class="side-menu">
+        <button id="closeMenuBtn" class="close-btn">×</button>
+        <h2>Menü</h2>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="hakkimizda.html">📖 Hakkımızda</a>
+        <a href="mekanlar.html">📍 Tüm Mekanlar</a>
+        <a href="blog.html">✍️ Gezi Blogu</a>
+        <a href="iletisim.html">📞 İletişim</a>
+        <a href="sss.html">❓ S.S.S.</a>
+        <hr style="border-color: #34495e; margin: 15px 0;">
+        <a href="#" id="openLogin">👤 Üye Girişi</a>
+        <a href="#" id="openRegister">📝 Kayıt Ol</a>
+    </nav>
+
+    <section class="hero-section" style="height: 200px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content"><h1>Sıkça Sorulan Sorular</h1></div>
+    </section>
+
+    <main class="main-container" style="justify-content: center;">
+        <section class="review-section" style="max-width: 800px;">
+            
+            <div style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <h3 style="color: #2c3e50; margin-bottom: 10px;">📌 YerGez tamamen ücretsiz mi?</h3>
+                <p style="color: #555;">Evet, platformumuzdaki tüm yorumları okumak ve yeni mekanlar keşfetmek tamamen ücretsizdir.</p>
+            </div>
+
+            <div style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                <h3 style="color: #2c3e50; margin-bottom: 10px;">📌 Yorum yapabilmek için üye olmalı mıyım?</h3>
+                <p style="color: #555;">Hayır, ana sayfamızdaki hızlı değerlendirme formunu kullanarak ziyaretçi olarak da yorum bırakabilirsiniz. Ancak kayıtlı üyelerimizin yorumları öne çıkarılır.</p>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <h3 style="color: #2c3e50; margin-bottom: 10px;">📌 Arama çubuğu nasıl çalışır?</h3>
+                <p style="color: #555;">Yukarıdaki arama çubuğuna gitmek istediğiniz veya merak ettiğiniz mekanın adını yazıp 'Ara' butonuna bastığınızda, sistem sizi doğrudan yeni bir sekmede o konumun Google Haritalar sayfasına yönlendirir.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #888;">
+        <p>Emirhan Tuğra Balcı -- 257351060</p>
+    </footer>
+
+    <div id="loginModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Üye Girişi</h3><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Giriş Yap</button></div>
+    <div id="registerModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Kayıt Ol</h3><input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Kayıt Ol</button></div>
+    <div id="feedbackModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Öneri & Şikayet</h3><textarea placeholder="Mesajınız..." rows="4"></textarea><button class="modal-submit" onclick="alert('Alındı!')">Gönder</button></div>
+    <script src="script.js?v=3"></script>
+</body>
+</html>

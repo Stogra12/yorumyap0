@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tüm Mekanlar - YerGez</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <div id="pageOverlay" class="hidden-element"></div>
+
+    <header>
+        <div class="logo">🌍 YerGez</div>
+        <div class="header-right"><button id="hamburgerBtn">☰</button></div>
+    </header>
+
+    <nav id="sideMenu" class="side-menu">
+        <button id="closeMenuBtn" class="close-btn">×</button>
+        <h2>Menü</h2>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="hakkimizda.html">📖 Hakkımızda</a>
+        <a href="mekanlar.html">📍 Tüm Mekanlar</a>
+        <a href="blog.html">✍️ Gezi Blogu</a>
+        <a href="iletisim.html">📞 İletişim</a>
+        <a href="sss.html">❓ S.S.S.</a>
+        <hr style="border-color: #34495e; margin: 15px 0;">
+        <a href="#" id="openLogin">👤 Üye Girişi</a>
+        <a href="#" id="openRegister">📝 Kayıt Ol</a>
+    </nav>
+
+    <section class="hero-section" style="height: 200px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1524230572899-a752b6515c0e?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content"><h1>Keşfedilecek Mekanlar</h1></div>
+    </section>
+
+    <main class="main-container" style="justify-content: center;">
+        <section class="favorites-section" style="width: 100%;">
+            <div class="places-grid">
+                <article class="place-card"><img src="https://loremflickr.com/600/400/galata,tower" alt="Galata"><div class="card-content"><h3>Galata Kulesi</h3><p class="location">İstanbul</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/iskenderun,beach" alt="İskenderun"><div class="card-content"><h3>İskenderun Sahili</h3><p class="location">Hatay</p><div class="star-rating-static">★★★★☆</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/cappadocia,balloon" alt="Kapadokya"><div class="card-content"><h3>Kapadokya Balon Turu</h3><p class="location">Nevşehir</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/pamukkale" alt="Pamukkale"><div class="card-content"><h3>Pamukkale Travertenleri</h3><p class="location">Denizli</p><div class="star-rating-static">★★★★☆</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/ephesus" alt="Efes"><div class="card-content"><h3>Efes Antik Kenti</h3><p class="location">İzmir</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/hagia,sophia" alt="Ayasofya"><div class="card-content"><h3>Ayasofya Camii</h3><p class="location">İstanbul</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/oludeniz" alt="Ölüdeniz"><div class="card-content"><h3>Ölüdeniz</h3><p class="location">Muğla</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/nemrut" alt="Nemrut"><div class="card-content"><h3>Nemrut Dağı</h3><p class="location">Adıyaman</p><div class="star-rating-static">★★★★☆</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/sumela" alt="Sümela"><div class="card-content"><h3>Sümela Manastırı</h3><p class="location">Trabzon</p><div class="star-rating-static">★★★★★</div></div></article>
+                <article class="place-card"><img src="https://loremflickr.com/600/400/salda,lake" alt="Salda"><div class="card-content"><h3>Salda Gölü</h3><p class="location">Burdur</p><div class="star-rating-static">★★★★☆</div></div></article>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #888;">
+        <p>Emirhan Tuğra Balcı -- 257351060</p>
+    </footer>
+
+    <div id="loginModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Üye Girişi</h3><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Giriş Yap</button></div>
+    <div id="registerModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Kayıt Ol</h3><input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Kayıt Ol</button></div>
+    <div id="feedbackModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Öneri & Şikayet</h3><textarea placeholder="Mesajınız..." rows="4"></textarea><button class="modal-submit" onclick="alert('Alındı!')">Gönder</button></div>
+    <script src="script.js?v=3"></script>
+</body>
+</html>

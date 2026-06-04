@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gezi Blogu - YerGez</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <div id="pageOverlay" class="hidden-element"></div>
+
+    <header>
+        <div class="logo">🌍 YerGez</div>
+        <div class="header-right"><button id="hamburgerBtn">☰</button></div>
+    </header>
+
+    <nav id="sideMenu" class="side-menu">
+        <button id="closeMenuBtn" class="close-btn">×</button>
+        <h2>Menü</h2>
+        <a href="index.html">🏠 Ana Sayfa</a>
+        <a href="hakkimizda.html">📖 Hakkımızda</a>
+        <a href="mekanlar.html">📍 Tüm Mekanlar</a>
+        <a href="blog.html">✍️ Gezi Blogu</a>
+        <a href="iletisim.html">📞 İletişim</a>
+        <a href="sss.html">❓ S.S.S.</a>
+        <hr style="border-color: #34495e; margin: 15px 0;">
+        <a href="#" id="openLogin">👤 Üye Girişi</a>
+        <a href="#" id="openRegister">📝 Kayıt Ol</a>
+    </nav>
+
+    <section class="hero-section" style="height: 200px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content"><h1>Seyahat Notları</h1></div>
+    </section>
+
+    <main class="main-container" style="justify-content: center;">
+        <div class="places-grid" style="width: 100%; max-width: 1000px;">
+            <article class="place-card">
+                <img src="https://loremflickr.com/600/400/camping" alt="Kamp">
+                <div class="card-content">
+                    <h3 style="color: #3498db;">Doğada Kamp Yapmanın Püf Noktaları</h3>
+                    <p style="font-size: 14px; color: #777; margin-bottom: 10px;">📅 12 Mayıs 2026</p>
+                    <p style="color: #555;">Şehrin gürültüsünden uzaklaşıp doğayla iç içe olmak isteyenler için çadır seçimi, ateş yakma teknikleri ve güvenli kamp alanları hakkında her şey...</p>
+                </div>
+            </article>
+            <article class="place-card">
+                <img src="https://loremflickr.com/600/400/travel,train" alt="Tren">
+                <div class="card-content">
+                    <h3 style="color: #3498db;">Doğu Ekspresi ile Kış Masalı</h3>
+                    <p style="font-size: 14px; color: #777; margin-bottom: 10px;">📅 03 Mart 2026</p>
+                    <p style="color: #555;">Ankara'dan Kars'a uzanan büyüleyici tren yolculuğunda yanınıza almanız gerekenler, bilet bulma taktikleri ve eşsiz manzara durakları.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #888;">
+        <p>Emirhan Tuğra Balcı -- 257351060</p>
+    </footer>
+
+    <div id="loginModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Üye Girişi</h3><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Giriş Yap</button></div>
+    <div id="registerModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Kayıt Ol</h3><input type="text" placeholder="Ad Soyad"><input type="email" placeholder="E-posta"><input type="password" placeholder="Şifre"><button class="modal-submit" onclick="alert('Başarılı!')">Kayıt Ol</button></div>
+    <div id="feedbackModal" class="modal-box hidden-element"><button class="modal-close">×</button><h3>Öneri & Şikayet</h3><textarea placeholder="Mesajınız..." rows="4"></textarea><button class="modal-submit" onclick="alert('Alındı!')">Gönder</button></div>
+    <script src="script.js?v=3"></script>
+</body>
+</html>
