@@ -6,10 +6,11 @@
     --bg-card: #1c1f26;
     --text-light: #f0f6fc;
     --text-muted: #8b949e;
-    --neon-accent: #d4f34a; /* Görseldeki ikonik neon yeşil/sarı */
+    --neon-accent: #d4f34a; 
 }
 
-body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; }
+/* overflow-x: hidden ile sağa sola kaymayı kalıcı engelliyoruz */
+body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: hidden; width: 100%; }
 .hidden-element { display: none !important; }
 
 /* --- PREMIUM HEADER --- */
@@ -28,16 +29,15 @@ body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: h
 .search-bar input { background: transparent; border: none; color: white; width: 250px; outline: none; }
 .search-bar input::placeholder { color: #aaa; }
 
-/* Menü Linkleri */
-.top-nav { display: flex; gap: 30px; align-items: center; }
+/* Menü Linkleri (flex-wrap: wrap eklendi) */
+.top-nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .top-nav a { text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 14px; transition: 0.3s; }
 .top-nav a:hover { color: var(--neon-accent); }
 .active-link { color: var(--neon-accent) !important; position: relative; }
 .active-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--neon-accent); }
 
-.login-btn { border: 1px solid white; padding: 8px 20px; border-radius: 20px; }
+.login-btn { border: 1px solid white; padding: 8px 15px; border-radius: 20px; }
 .login-btn:hover { background: white; color: black; }
-.mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 30px; }
 
 /* --- DEVASA HERO (KARŞILAMA) ALANI --- */
 .premium-hero {
@@ -49,54 +49,56 @@ body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: h
     background: linear-gradient(rgba(18,20,24,0.3), rgba(18,20,24,1)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover;
     z-index: -1;
 }
-.hero-content { text-align: center; margin-top: -50px; }
+.hero-content { text-align: center; margin-top: -50px; width: 90%; }
 .massive-text {
-    font-size: 12vw; font-weight: 900; letter-spacing: 8px; line-height: 1;
-    color: rgba(255,255,255,0.9); margin-bottom: 20px; text-transform: uppercase;
+    font-size: 12vw; font-weight: 900; letter-spacing: 5px; line-height: 1;
+    color: rgba(255,255,255,0.9); margin-bottom: 20px; text-transform: uppercase; word-wrap: break-word;
 }
 .subtitle { font-size: 18px; color: #ddd; letter-spacing: 2px; }
 
 /* Görseldeki İkonlu Alt Çubuk */
 .hero-features-bar {
-    position: absolute; bottom: 50px; width: 80%; display: flex; justify-content: space-between;
-    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;
+    position: absolute; bottom: 50px; width: 90%; display: flex; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; flex-wrap: wrap; gap: 15px;
 }
 .feature-item { display: flex; align-items: center; gap: 15px; }
-.f-icon { width: 40px; height: 40px; border: 1px solid var(--neon-accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--neon-accent); }
+.f-icon { min-width: 40px; height: 40px; border: 1px solid var(--neon-accent); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--neon-accent); }
 .feature-item p { font-size: 13px; font-weight: bold; line-height: 1.4; }
 .feature-item p span { font-weight: normal; color: var(--text-muted); font-size: 12px; }
 
 /* --- THE WONDERS OF NATURE (DİKEY KARTLAR) --- */
-.wonders-section { padding: 100px 5%; text-align: center; }
+.wonders-section { padding: 80px 5%; text-align: center; }
 .section-header h2 { font-size: 36px; margin-bottom: 10px; }
 .section-header p { color: var(--text-muted); margin-bottom: 50px; }
 
-.tall-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.tall-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    
 .tall-card {
-    position: relative; height: 450px; border-radius: 10px; overflow: hidden;
+    position: relative; height: 400px; border-radius: 10px; overflow: hidden;
     cursor: pointer; transition: transform 0.4s ease;
 }
 .tall-card:hover { transform: translateY(-10px); }
 .tall-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .tall-card:hover img { transform: scale(1.05); }
 .card-overlay {
-    position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px;
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px 20px;
     background: linear-gradient(transparent, rgba(0,0,0,0.9)); text-align: left;
 }
 .card-overlay h3 { font-size: 20px; margin-bottom: 5px; color: var(--text-light); }
 .card-overlay p { color: var(--neon-accent); font-size: 13px; }
 
 /* --- İKİYE BÖLÜNMÜŞ TASARIM (YORUM ALANI) --- */
-.split-section { display: flex; padding: 100px 10%; gap: 60px; align-items: center; }
-.split-images { flex: 1; position: relative; }
+.split-section { display: flex; padding: 80px 5%; gap: 40px; align-items: center; flex-wrap: wrap; }
+.split-images { flex: 1; min-width: 300px; position: relative; }
 .split-images .img-large { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 
-.split-text-form { flex: 1; }
-.split-text-form h2 { font-size: 38px; margin-bottom: 20px; line-height: 1.2; }
-.split-text-form p { color: var(--text-muted); line-height: 1.6; margin-bottom: 40px; }
+.split-text-form { flex: 1; min-width: 300px; }
+.split-text-form h2 { font-size: 32px; margin-bottom: 20px; line-height: 1.2; }
+    
+.split-text-form p { color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
 
 /* Yeni Koyu Yorum Formu */
-.dark-review-form { background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+.dark-review-form { background: var(--bg-card); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
 .star-rating { font-size: 30px; color: #444; cursor: pointer; margin-bottom: 15px; }
 .star-rating .star.active { color: var(--neon-accent); }
 .dark-review-form textarea {
@@ -106,7 +108,7 @@ body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: h
 .dark-review-form textarea:focus { border-color: var(--neon-accent); outline: none; }
 .neon-btn {
     background: var(--neon-accent); color: black; font-weight: bold; border: none;
-    padding: 15px 30px; border-radius: 30px; cursor: pointer; transition: 0.3s;
+    padding: 15px 30px; border-radius: 30px; cursor: pointer; transition: 0.3s; width: 100%;
 }
 .neon-btn:hover { background: #bfe038; box-shadow: 0 0 15px rgba(212, 243, 74, 0.4); }
 
@@ -115,21 +117,43 @@ body { background-color: var(--bg-dark); color: var(--text-light); overflow-x: h
 .comment-stars { color: var(--neon-accent); font-size: 14px; margin-bottom: 5px; }
 
 /* --- FOOTER & MODAL --- */
-.dark-footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #555; margin-top: 50px; }
+.dark-footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: #555; margin-top: 50px; }
 
 #pageOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 900; }
 .modal-box {
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid #333;
-    z-index: 1001; width: 350px; display: flex; flex-direction: column; gap: 15px;
+    background: var(--bg-card); padding: 30px; border-radius: 15px; border: 1px solid #333;
+    z-index: 1001; width: 90%; max-width: 400px; display: flex; flex-direction: column; gap: 15px;
 }
 .modal-box h3 { text-align: center; color: white; margin-bottom: 10px; }
 .modal-box input { background: #111; border: 1px solid #333; color: white; padding: 15px; border-radius: 8px; outline: none; }
 .modal-submit { background: var(--neon-accent); color: black; font-weight: bold; padding: 15px; border: none; border-radius: 8px; cursor: pointer; }
 .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
 
-@media (max-width: 1000px) {
-    .split-section { flex-direction: column; }
-    .hero-features-bar { display: none; } /* Mobilde sığması zor olur */
-    .massive-text { font-size: 18vw; }
+/* ----------------------------------------------------- */
+/* --- 📱 MOBİL UYUM (RESPONSIVE) ALANI --- */
+/* ----------------------------------------------------- */
+@media (max-width: 950px) {
+    /* Menü ve logoyu alt alta diziyoruz */
+    .premium-header { flex-direction: column; gap: 15px; padding: 20px 5%; position: relative; background: var(--bg-dark); }
+    
+    /* Arama çubuğunu ekrana tam yayıyoruz */
+    .search-bar { width: 100%; justify-content: center; }
+    .search-bar input { width: 100%; }
+    
+    /* 6 sekmeli menünün aralıklarını sıkıştırıyoruz */
+    .top-nav { gap: 12px; }
+    .top-nav a { font-size: 13px; }
+    
+    /* Büyük KEŞFET yazısını mobilde biraz küçültüyoruz */
+    .massive-text { font-size: 15vw; margin-top: 20px; }
+    .premium-hero { min-height: 50vh; height: auto; padding: 50px 0; }
+    
+    /* Mobilde çok yer kaplamaması için alttaki ikonları gizliyoruz */
+    .hero-features-bar { display: none; } 
+    
+    /* Kartların yüksekliklerini telefonlar için dengeliyoruz */
+    .tall-card { height: 350px; }
+    .section-header h2 { font-size: 28px; }
+    .split-text-form h2 { font-size: 26px; }
 }
