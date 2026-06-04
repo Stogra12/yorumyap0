@@ -169,3 +169,31 @@ main {
     font-style: italic;
     border-radius: 0 5px 5px 0;
 }
+/* --- YENİ YAN YANA (SOL/SAĞ) DÜZEN AYARLARI --- */
+
+/* Ana kapsayıcıyı tam ekran yapıp ikiye bölüyoruz */
+.main-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px 3%; /* Sağdan soldan hafif boşluk, ekranı tam kaplar */
+    max-width: 100%;
+    align-items: flex-start; /* Sol barın aşağı uzamasını engeller */
+}
+
+/* Sol Taraftaki Yorum Barı */
+.left-sidebar {
+    flex: 0 0 400px; /* Sol barın genişliğini 400px olarak sabitler */
+    position: sticky; /* Ekrana yapışmasını sağlar */
+    top: 30px; /* Yukarıdan 30px boşluk bırakarak kayar */
+}
+
+/* Sağ Taraftaki Mekan Kartları */
+.right-content {
+    flex: 1; /* Kalan tüm genişliği mekan kartlarına verir */
+}
+
+/* Eski review-section boşluklarını sıfırlıyoruz */
+.review-section {
+    margin: 0 !important; /* Ortalamayı iptal et */
+    width: 100%;
+}
