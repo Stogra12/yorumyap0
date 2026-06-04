@@ -1,3 +1,7 @@
+// --- SİTE AÇILIŞ UYARISI ---
+window.addEventListener('load', function() {
+    alert("Hazırlayan: Emirhan Tuğra Balcı -- 257351060\nYerGez'e Hoş Geldiniz!");
+});
 // 1. YILDIZ VE YORUM İŞLEMLERİ
 const stars = document.querySelectorAll('.star');
 const submitBtn = document.getElementById('submit-review');
