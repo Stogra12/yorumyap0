@@ -191,9 +191,31 @@
     </main>
     </main>
 
-    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #444; color: #888;">
-        <p>Emirhan Tuğra Balcı -- 257351060</p>
-    </footer>
+   <div id="modalOverlay" class="hidden-modal"></div>
+
+    <div id="loginModal" class="modal-box hidden-modal">
+        <h3>Üye Girişi</h3>
+        <input type="email" placeholder="E-posta Adresiniz">
+        <input type="password" placeholder="Şifreniz">
+        <button class="modal-submit" onclick="alert('Giriş başarılı! Yönlendiriliyorsunuz...')">Giriş Yap</button>
+        <button class="modal-close">Kapat</button>
+    </div>
+
+    <div id="registerModal" class="modal-box hidden-modal">
+        <h3>Yeni Kayıt Oluştur</h3>
+        <input type="text" placeholder="Adınız Soyadınız">
+        <input type="email" placeholder="E-posta Adresiniz">
+        <input type="password" placeholder="Şifre Belirleyin">
+        <button class="modal-submit" onclick="alert('Kayıt başarılı! Aramıza hoş geldin.')">Kayıt Ol</button>
+        <button class="modal-close">Kapat</button>
+    </div>
+
+    <div id="feedbackModal" class="modal-box hidden-modal">
+        <h3>Bize Ulaşın</h3>
+        <textarea placeholder="Öneri veya şikayetlerinizi buraya yazabilirsiniz..." rows="4"></textarea>
+        <button class="modal-submit" onclick="alert('Mesajınız alındı, geri bildiriminiz için teşekkür ederiz!')">Gönder</button>
+        <button class="modal-close">Kapat</button>
+    </div>
 
     <script src="script.js"></script>
 
