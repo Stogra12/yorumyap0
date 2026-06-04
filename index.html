@@ -24,71 +24,11 @@
     </section>
 
     <main>
-        <section class="favorites-section">
-            <h2>⭐ Favori Mekanlar ve Son Yorumlar</h2>
-            <div class="places-grid">
-                
-                <article class="place-card">
-                    <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=400&q=80" alt="Galata Kulesi">
-                    <div class="card-content">
-                        <h3>Galata Kulesi</h3>
-                        <p class="location">İstanbul</p>
-                        <div class="star-rating" style="cursor: default; margin-bottom: 5px;">
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                        </div>
-                        <div class="old-comment">
-                            <p><strong>Ayşe Y.:</strong> "Manzara tek kelimeyle harikaydı, kesinlikle gün batımında gidilmeli."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="place-card">
-                    <img src="https://images.unsplash.com/photo-1574958269340-fa927503f3cb?auto=format&fit=crop&w=400&q=80" alt="İskenderun Sahili">
-                    <div class="card-content">
-                        <h3>İskenderun Sahili</h3>
-                        <p class="location">Hatay</p>
-                        <div class="star-rating" style="cursor: default; margin-bottom: 5px;">
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star" style="color: #ccc;">★</span>
-                        </div>
-                        <div class="old-comment">
-                            <p><strong>Mehmet T.:</strong> "Akşam yürüyüşleri için mükemmel bir yer. Palmiyeler ve deniz havası çok dinlendirici."</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="place-card">
-                    <img src="https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?auto=format&fit=crop&w=400&q=80" alt="Kapadokya">
-                    <div class="card-content">
-                        <h3>Kapadokya Balon Turu</h3>
-                        <p class="location">Nevşehir</p>
-                        <div class="star-rating" style="cursor: default; margin-bottom: 5px;">
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                            <span class="star active" style="color: #f1c40f;">★</span>
-                        </div>
-                        <div class="old-comment">
-                            <p><strong>Zeynep K.:</strong> "Hayatımda yaşadığım en büyüleyici deneyimdi!"</p>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
+        
         <section class="review-section">
-            <h3 style="margin-bottom: 15px;">Yeni Bir Mekan Değerlendir</h3>
+            <h3 style="margin-bottom: 15px; text-align: center;">Yeni Bir Mekan Değerlendir</h3>
             
-            <div class="star-rating" id="stars">
+            <div class="star-rating" id="stars" style="text-align: center;">
                 <span class="star" data-value="1">★</span>
                 <span class="star" data-value="2">★</span>
                 <span class="star" data-value="3">★</span>
@@ -103,15 +43,20 @@
 
             <div class="comments-list" id="comments-list">
                 <h3>Eklenen Yorumlar</h3>
-            </div>
+                </div>
         </section>
-    </main>
 
-    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #444; color: #888;">
-        <p>Emirhan Tuğra Balcı -- 257351060</p>
-    </footer>
+        <hr class="divider">
 
-    <script src="script.js"></script>
-
-</body>
-</html>
+        <section class="favorites-section">
+            <h2>⭐ Popüler Mekanlar ve Yorumlar</h2>
+            <div class="places-grid">
+                
+                <article class="place-card">
+                    <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=500&q=80" alt="Galata Kulesi">
+                    <div class="card-content">
+                        <h3>Galata Kulesi</h3>
+                        <p class="location">İstanbul</p>
+                        <div class="star-rating-static">★★★★★</div>
+                        <div class="old-comment">
+                            <p><strong>
