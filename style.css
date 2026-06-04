@@ -1,30 +1,62 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-body { background-color: #f5f7fa; color: #333; }
+body { background-color: #f5f7fa; color: #333; overflow-x: hidden; }
 
-header { background-color: #fff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; z-index: 100;}
+/* ORTAK GİZLEME SINIFI (ÇOK ÖNEMLİ) */
+.hidden-element { display: none !important; }
+
+/* HEADER TASARIMI */
+header { background-color: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; z-index: 50; }
 .logo { font-size: 24px; font-weight: bold; color: #2c3e50; }
 
 .search-bar { display: flex; }
 .search-bar input { padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 5px 0 0 5px; outline: none; }
 .search-bar button { padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 0 5px 5px 0; cursor: pointer; }
-.search-bar button:hover { background-color: #2980b9; }
 
-/* MENÜ TASARIMI */
-.header-right { position: relative; }
-#hamburgerBtn { background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-#hamburgerBtn:hover { background-color: #2980b9; }
+/* HAMBURGER BUTONU */
+#hamburgerBtn { background: none; border: none; font-size: 30px; cursor: pointer; color: #2c3e50; transition: 0.3s; }
+#hamburgerBtn:hover { color: #3498db; }
 
-#dropdownMenu { position: absolute; top: 50px; right: 0; background: white; width: 200px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; overflow: hidden; transition: 0.3s; }
-.hidden-menu { display: none !important; }
-#dropdownMenu a { padding: 15px 20px; color: #333; text-decoration: none; border-bottom: 1px solid #eee; font-weight: 500; }
-#dropdownMenu a:hover { background-color: #f5f7fa; color: #3498db; padding-left: 25px; transition: 0.2s;}
+/* YANDAN AÇILAN MENÜ (SLIDE-OUT) */
+.side-menu {
+    position: fixed; top: 0; right: -300px; /* Başlangıçta ekran dışı */
+    width: 300px; height: 100vh;
+    background-color: #2c3e50; /* Koyu şık renk */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    transition: right 0.4s ease; z-index: 1000;
+    display: flex; flex-direction: column; padding: 80px 30px 30px 30px;
+}
+.side-menu.open { right: 0; } /* Bu sınıf eklendiğinde menü ekrana girer */
+.side-menu h2 { color: #f1c40f; margin-bottom: 30px; border-bottom: 1px solid #34495e; padding-bottom: 10px; }
+.side-menu a { color: #ecf0f1; text-decoration: none; font-size: 18px; padding: 15px 0; border-bottom: 1px solid #34495e; transition: 0.3s; }
+.side-menu a:hover { color: #3498db; padding-left: 10px; }
 
-.hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80') center/cover; height: 350px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
+/* KAPATMA BUTONLARI (ÇARPI İŞARETİ) */
+.close-btn, .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: #fff; font-size: 30px; cursor: pointer; transition: 0.3s;
+}
+.close-btn:hover { color: #e74c3c; }
+.modal-close { color: #e74c3c; } /* Formlar beyaz olduğu için çarpı kırmızı */
 
+/* ARKA PLAN KARARTMASI */
+#pageOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 900; }
+
+/* FORM KUTULARI (MODALS) */
+.modal-box {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    z-index: 1001; width: 350px; display: flex; flex-direction: column; gap: 15px;
+}
+.modal-box h3 { text-align: center; color: #2c3e50; font-size: 24px; margin-bottom: 10px; }
+.modal-box input, .modal-box textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; outline: none; font-family: inherit;}
+.modal-submit { background: #2ecc71; color: white; border: none; padding: 15px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; }
+.modal-submit:hover { background: #27ae60; }
+
+/* SAYFA İSKELETİ VE KARTLAR */
+.hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80') center/cover; height: 350px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; }
 .main-container { display: flex; gap: 40px; padding: 50px 3%; max-width: 100%; align-items: flex-start; }
 .left-sidebar { flex: 0 0 350px; position: sticky; top: 30px; }
 .right-content { flex: 1; min-width: 0; }
-
 .review-section { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
 .star-rating { font-size: 35px; color: #ccc; cursor: pointer; margin-bottom: 20px; }
 .star-rating .star.active { color: #f1c40f; }
@@ -33,19 +65,9 @@ header { background-color: #fff; padding: 20px 50px; display: flex; justify-cont
 .comments-list { margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px; }
 .single-comment { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
 .single-comment .comment-stars { color: #f1c40f; margin-bottom: 5px; }
-
 .places-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .place-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .place-card img { width: 100%; height: 200px; object-fit: cover; }
 .card-content { padding: 20px; }
 .star-rating-static { color: #f1c40f; font-size: 18px; margin-bottom: 10px; }
 .old-comment { background: #f8f9fa; padding: 10px; border-left: 4px solid #3498db; font-size: 14px; font-style: italic;}
-
-/* POP-UP (MODAL) EKRANLARI */
-.hidden-modal { display: none !important; }
-#modalOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 998; }
-.modal-box { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 999; width: 350px; display: flex; flex-direction: column; gap: 15px; }
-.modal-box h3 { text-align: center; color: #2c3e50; }
-.modal-box input, .modal-box textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; outline: none; }
-.modal-submit { background: #2ecc71; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.modal-close { background: transparent; color: #e74c3c; border: 1px solid #e74c3c; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: bold; }
