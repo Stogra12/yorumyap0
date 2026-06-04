@@ -90,3 +90,36 @@ searchInput.addEventListener('keypress', function(event) {
         searchLocation();
     }
 });
+// --- HAMBURGER MENÜ VE POP-UP İŞLEMLERİ ---
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const modalOverlay = document.getElementById('modalOverlay');
+const closeBtns = document.querySelectorAll('.modal-close');
+
+// 1. Hamburger Menüyü Aç/Kapat
+hamburgerBtn.addEventListener('click', function() {
+    dropdownMenu.classList.toggle('hidden-menu');
+});
+
+// 2. Tıklanan linke göre ilgili pop-up formunu açma
+function openModal(linkId, modalId) {
+    document.getElementById(linkId).addEventListener('click', function(e) {
+        e.preventDefault(); // Linkin sayfayı yenilemesini engelle
+        document.getElementById(modalId).classList.remove('hidden-modal');
+        modalOverlay.classList.remove('hidden-modal');
+        dropdownMenu.classList.add('hidden-menu'); // Form açılınca menüyü gizle
+    });
+}
+
+openModal('openLogin', 'loginModal');
+openModal('openRegister', 'registerModal');
+openModal('openFeedback', 'feedbackModal');
+
+// 3. Formları kapatma (Kapat butonuna veya arka plan karanlığına basınca)
+function closeAllModals() {
+    document.querySelectorAll('.modal-box').forEach(modal => modal.classList.add('hidden-modal'));
+    modalOverlay.classList.add('hidden-modal');
+}
+
+closeBtns.forEach(btn => btn.addEventListener('click', closeAllModals));
+modalOverlay.addEventListener('click', closeAllModals);
