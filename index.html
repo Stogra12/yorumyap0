@@ -23,169 +23,161 @@
     </section>
 
     <main>
-        <section class="review-section">
-            <h3 style="margin-bottom: 15px; text-align: center;">Yeni Bir Mekan Değerlendir</h3>
-            
-            <div class="star-rating" id="stars" style="text-align: center;">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-
-            <div class="review-form">
-                <textarea id="comment-text" placeholder="Gittiğiniz bir mekan hakkında ne düşünüyorsunuz?" rows="4"></textarea>
-                <button id="submit-review">Yorumu Gönder</button>
-            </div>
-
-            <div class="comments-list" id="comments-list">
-                <h3>Eklenen Yorumlar</h3>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <section class="favorites-section">
-            <h2>⭐ Popüler Mekanlar ve Yorumlar</h2>
-            <div class="places-grid">
+       <main class="main-container">
+        
+        <aside class="left-sidebar">
+            <section class="review-section">
+                <h3 style="margin-bottom: 15px; text-align: center;">Yeni Bir Mekan Değerlendir</h3>
                 
+                <div class="star-rating" id="stars" style="text-align: center;">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+
+                <div class="review-form">
+                    <textarea id="comment-text" placeholder="Gittiğiniz bir mekan hakkında ne düşünüyorsunuz?" rows="4"></textarea>
+                    <button id="submit-review">Yorumu Gönder</button>
+                </div>
+
+                <div class="comments-list" id="comments-list">
+                    <h3>Eklenen Yorumlar</h3>
+                </div>
+            </section>
+        </aside>
+
+        <section class="right-content">
+            <section class="favorites-section">
+                <h2 style="margin-bottom: 30px; color: #f1c40f; text-align: left;">⭐ Popüler Mekanlar ve Yorumlar</h2>
                 <div class="places-grid">
-    
-  <div class="places-grid">
-    
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/galata,tower,istanbul" alt="Galata Kulesi">
-        <div class="card-content">
-            <h3>Galata Kulesi</h3>
-            <p class="location">İstanbul</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Ayşe Y.:</strong> "Manzara tek kelimeyle harikaydı, kesinlikle gün batımında gidilmeli."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/iskenderun,hatay" alt="İskenderun Sahili">
-        <div class="card-content">
-            <h3>İskenderun Sahili</h3>
-            <p class="location">Hatay</p>
-            <div class="star-rating-static">★★★★☆</div>
-            <div class="old-comment">
-                <p><strong>Mehmet T.:</strong> "Akşam yürüyüşleri için mükemmel bir yer. Deniz havası çok dinlendirici."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/cappadocia,balloon" alt="Kapadokya">
-        <div class="card-content">
-            <h3>Kapadokya Balon Turu</h3>
-            <p class="location">Nevşehir</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Zeynep K.:</strong> "Hayatımda yaşadığım en büyüleyici deneyimdi!"</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/pamukkale,travertine" alt="Pamukkale">
-        <div class="card-content">
-            <h3>Pamukkale Travertenleri</h3>
-            <p class="location">Denizli</p>
-            <div class="star-rating-static">★★★★☆</div>
-            <div class="old-comment">
-                <p><strong>Burak C.:</strong> "Bembeyaz sular ve antik havuz çok etkileyiciydi. Mutlaka görülmeli."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/ephesus,ancient" alt="Efes Antik Kenti">
-        <div class="card-content">
-            <h3>Efes Antik Kenti</h3>
-            <p class="location">İzmir</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Elif D.:</strong> "Tarihin içinde yürümek gibiydi, Celsus Kütüphanesi muazzam."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/hagia,sophia" alt="Ayasofya">
-        <div class="card-content">
-            <h3>Ayasofya Camii</h3>
-            <p class="location">İstanbul</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Kerem S.:</strong> "Mimarisi ve atmosferi tüyler ürpertici güzellikte."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/oludeniz,fethiye" alt="Ölüdeniz">
-        <div class="card-content">
-            <h3>Ölüdeniz</h3>
-            <p class="location">Muğla</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Ceren B.:</strong> "Suyu cam gibi berrak, yamaç paraşütü yapmak harika bir heyecandı."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/nemrut,statue" alt="Nemrut Dağı">
-        <div class="card-content">
-            <h3>Nemrut Dağı</h3>
-            <p class="location">Adıyaman</p>
-            <div class="star-rating-static">★★★★☆</div>
-            <div class="old-comment">
-                <p><strong>Oğuz V.:</strong> "Güneşin doğuşunu heykellerin arasında izlemek unutulmazdı."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/sumela,monastery" alt="Sümela Manastırı">
-        <div class="card-content">
-            <h3>Sümela Manastırı</h3>
-            <p class="location">Trabzon</p>
-            <div class="star-rating-static">★★★★★</div>
-            <div class="old-comment">
-                <p><strong>Büşra N.:</strong> "Dağın yamacına nasıl inşa edildiğine inanamıyorsunuz, doğası harika."</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="place-card">
-        <img src="https://loremflickr.com/600/400/salda,lake" alt="Salda Gölü">
-        <div class="card-content">
-            <h3>Salda Gölü</h3>
-            <p class="location">Burdur</p>
-            <div class="star-rating-static">★★★★☆</div>
-            <div class="old-comment">
-                <p><strong>Emre A.:</strong> "Türkiye'nin Maldivleri denmeyi sonuna kadar hak ediyor, kumları bembeyaz."</p>
-            </div>
-        </div>
-    </article>
-
-</div>
-            </div>
-        </div>
-    </article>
-
-</div>
+                    
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/galata,tower,istanbul" alt="Galata Kulesi">
+                        <div class="card-content">
+                            <h3>Galata Kulesi</h3>
+                            <p class="location">İstanbul</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Ayşe Y.:</strong> "Manzara tek kelimeyle harikaydı, kesinlikle gün batımında gidilmeli."</p>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-            </div>
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/iskenderun,hatay" alt="İskenderun Sahili">
+                        <div class="card-content">
+                            <h3>İskenderun Sahili</h3>
+                            <p class="location">Hatay</p>
+                            <div class="star-rating-static">★★★★☆</div>
+                            <div class="old-comment">
+                                <p><strong>Mehmet T.:</strong> "Akşam yürüyüşleri için mükemmel bir yer. Deniz havası çok dinlendirici."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/cappadocia,balloon" alt="Kapadokya">
+                        <div class="card-content">
+                            <h3>Kapadokya Balon Turu</h3>
+                            <p class="location">Nevşehir</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Zeynep K.:</strong> "Hayatımda yaşadığım en büyüleyici deneyimdi!"</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/pamukkale,travertine" alt="Pamukkale">
+                        <div class="card-content">
+                            <h3>Pamukkale Travertenleri</h3>
+                            <p class="location">Denizli</p>
+                            <div class="star-rating-static">★★★★☆</div>
+                            <div class="old-comment">
+                                <p><strong>Burak C.:</strong> "Bembeyaz sular ve antik havuz çok etkileyiciydi. Mutlaka görülmeli."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/ephesus,ancient" alt="Efes Antik Kenti">
+                        <div class="card-content">
+                            <h3>Efes Antik Kenti</h3>
+                            <p class="location">İzmir</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Elif D.:</strong> "Tarihin içinde yürümek gibiydi, Celsus Kütüphanesi muazzam."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/hagia,sophia" alt="Ayasofya">
+                        <div class="card-content">
+                            <h3>Ayasofya Camii</h3>
+                            <p class="location">İstanbul</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Kerem S.:</strong> "Mimarisi ve atmosferi tüyler ürpertici güzellikte."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/oludeniz,fethiye" alt="Ölüdeniz">
+                        <div class="card-content">
+                            <h3>Ölüdeniz</h3>
+                            <p class="location">Muğla</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Ceren B.:</strong> "Suyu cam gibi berrak, yamaç paraşütü yapmak harika bir heyecandı."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/nemrut,statue" alt="Nemrut Dağı">
+                        <div class="card-content">
+                            <h3>Nemrut Dağı</h3>
+                            <p class="location">Adıyaman</p>
+                            <div class="star-rating-static">★★★★☆</div>
+                            <div class="old-comment">
+                                <p><strong>Oğuz V.:</strong> "Güneşin doğuşunu heykellerin arasında izlemek unutulmazdı."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/sumela,monastery" alt="Sümela Manastırı">
+                        <div class="card-content">
+                            <h3>Sümela Manastırı</h3>
+                            <p class="location">Trabzon</p>
+                            <div class="star-rating-static">★★★★★</div>
+                            <div class="old-comment">
+                                <p><strong>Büşra N.:</strong> "Dağın yamacına nasıl inşa edildiğine inanamıyorsunuz, doğası harika."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="place-card">
+                        <img src="https://loremflickr.com/600/400/salda,lake" alt="Salda Gölü">
+                        <div class="card-content">
+                            <h3>Salda Gölü</h3>
+                            <p class="location">Burdur</p>
+                            <div class="star-rating-static">★★★★☆</div>
+                            <div class="old-comment">
+                                <p><strong>Emre A.:</strong> "Türkiye'nin Maldivleri denmeyi sonuna kadar hak ediyor, kumları bembeyaz."</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
         </section>
+
+    </main>
     </main>
 
     <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #444; color: #888;">
