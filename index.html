@@ -133,11 +133,12 @@
                 });
             }
 
-            // 3. GOOGLE MAPS ARAMA
+           // 3. GOOGLE MAPS ARAMA
             const searchInput = document.getElementById('searchInput');
             function searchLocation() {
                 if (searchInput && searchInput.value.trim() !== "") {
-                    window.open(`http://googleusercontent.com/maps.google.com/?q=${encodeURIComponent(searchInput.value.trim())}`, '_blank');
+                    // Hatalı uzantı silindi, resmi ve temiz Google Haritalar linki eklendi
+                    window.open(`https://www.google.com/maps?q=${encodeURIComponent(searchInput.value.trim())}`, '_blank');
                     searchInput.value = '';
                 } else {
                     alert("Lütfen aramak için bir mekan girin!");
