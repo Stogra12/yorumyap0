@@ -150,4 +150,22 @@ main {
     object-fit: cover;
 }
 
-.card-content {
+.card-content { padding: 25px; }
+.card-content h3 { font-size: 20px; margin-bottom: 5px; color: #333; }
+.location { color: #7f8c8d; font-size: 14px; margin-bottom: 15px; }
+
+.star-rating-static {
+    color: #f1c40f;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.old-comment {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    border-radius: 0 5px 5px 0;
+}
