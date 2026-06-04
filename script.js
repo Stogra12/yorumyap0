@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // 1. YILDIZ VE YORUM İŞLEMLERİ
+    // --- YILDIZ VE YORUM İŞLEMLERİ ---
     const stars = document.querySelectorAll('.star');
     const submitBtn = document.getElementById('submit-review');
     const commentText = document.getElementById('comment-text');
@@ -11,11 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         star.addEventListener('click', function() {
             selectedRating = this.getAttribute('data-value');
             stars.forEach(s => {
-                if (s.getAttribute('data-value') <= selectedRating) {
-                    s.classList.add('active');
-                } else {
-                    s.classList.remove('active');
-                }
+                s.classList.toggle('active', s.getAttribute('data-value') <= selectedRating);
             });
         });
     });
@@ -26,15 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         let starIcons = "★".repeat(selectedRating) + "☆".repeat(5 - selectedRating);
-        const newCommentBlock = document.createElement('div');
-        newCommentBlock.classList.add('single-comment');
-        newCommentBlock.innerHTML = `<div class="comment-stars">${starIcons}</div><p><strong>Ziyaretçi:</strong> ${commentText.value}</p>`;
-        commentsList.appendChild(newCommentBlock);
+        const div = document.createElement('div');
+        div.className = 'single-comment';
+        div.innerHTML = `<div class="comment-stars">${starIcons}</div><p><strong>Ziyaretçi:</strong> ${commentText.value}</p>`;
+        commentsList.appendChild(div);
         commentText.value = ""; selectedRating = 0;
         stars.forEach(s => s.classList.remove('active'));
     });
 
-    // 2. GOOGLE MAPS ARAMA
+    // --- GOOGLE MAPS ARAMA ---
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
 
@@ -49,33 +45,39 @@ document.addEventListener('DOMContentLoaded', function() {
     searchBtn.addEventListener('click', searchLocation);
     searchInput.addEventListener('keypress', e => { if(e.key === 'Enter') searchLocation(); });
 
-    // 3. MENÜ VE POP-UP İŞLEMLERİ
+    // --- YANDAN AÇILAN MENÜ VE FORMLAR (MODALS) ---
     const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const modalOverlay = document.getElementById('modalOverlay');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const pageOverlay = document.getElementById('pageOverlay');
 
-    hamburgerBtn.addEventListener('click', function() {
-        dropdownMenu.classList.toggle('hidden-menu');
+    // Menüyü Aç
+    hamburgerBtn.addEventListener('click', () => {
+        sideMenu.classList.add('open');
+        pageOverlay.classList.remove('hidden-element');
     });
 
-    function setupModal(btnId, modalId) {
-        document.getElementById(btnId).addEventListener('click', function(e) {
+    // Her Şeyi Kapat (Menü ve Formlar)
+    function closeAll() {
+        sideMenu.classList.remove('open');
+        pageOverlay.classList.add('hidden-element');
+        document.querySelectorAll('.modal-box').forEach(m => m.classList.add('hidden-element'));
+    }
+
+    closeMenuBtn.addEventListener('click', closeAll);
+    pageOverlay.addEventListener('click', closeAll);
+    document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeAll));
+
+    // Formları Açan Fonksiyon
+    function setupFormLink(linkId, modalId) {
+        document.getElementById(linkId).addEventListener('click', (e) => {
             e.preventDefault();
-            document.getElementById(modalId).classList.remove('hidden-modal');
-            modalOverlay.classList.remove('hidden-modal');
-            dropdownMenu.classList.add('hidden-menu');
+            sideMenu.classList.remove('open'); // Menüyü gizle
+            document.getElementById(modalId).classList.remove('hidden-element'); // İlgili formu göster
         });
     }
 
-    setupModal('openLogin', 'loginModal');
-    setupModal('openRegister', 'registerModal');
-    setupModal('openFeedback', 'feedbackModal');
-
-    function closeModals() {
-        document.querySelectorAll('.modal-box').forEach(m => m.classList.add('hidden-modal'));
-        modalOverlay.classList.add('hidden-modal');
-    }
-
-    document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeModals));
-    modalOverlay.addEventListener('click', closeModals);
+    setupFormLink('openLogin', 'loginModal');
+    setupFormLink('openRegister', 'registerModal');
+    setupFormLink('openFeedback', 'feedbackModal');
 });
