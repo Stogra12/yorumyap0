@@ -60,3 +60,33 @@ submitBtn.addEventListener('click', function() {
     selectedRating = 0;
     stars.forEach(s => s.classList.remove('active'));
 });
+// --- GOOGLE MAPS ARAMA İŞLEMİ ---
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
+function searchLocation() {
+    const query = searchInput.value.trim(); // Boşlukları temizleyerek yazıyı al
+    
+    if (query !== "") {
+        // Google Maps arama linkini oluştur
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        
+        // Linki yeni bir sekmede aç
+        window.open(mapsUrl, '_blank');
+        
+        // Aradıktan sonra kutuyu temizle
+        searchInput.value = '';
+    } else {
+        alert("Lütfen aramak için bir mekan veya şehir adı girin!");
+    }
+}
+
+// "Ara" butonuna tıklanınca çalıştır
+searchBtn.addEventListener('click', searchLocation);
+
+// Arama kutusundayken klavyeden "Enter" tuşuna basılınca çalıştır
+searchInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        searchLocation();
+    }
+});
