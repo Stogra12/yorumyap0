@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YerGez - Premium Keşif</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -44,139 +44,16 @@
     <main class="dark-main">
         <section class="wonders-section">
             <div class="section-header">
-                <h2>Doğanın ve Tarihin Harikaları</h2>
+                <h2>Türkiye'nin Harikaları</h2>
                 <p>Dünyanın dört bir yanındaki gezginler için en otantik içerikleri sunuyoruz.</p>
             </div>
 
             <div class="tall-cards-grid">
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=600&q=80" alt="Galata"><div class="card-overlay"><h3>Galata Kulesi</h3><p>İstanbul • ⭐⭐⭐⭐⭐</p></div></div>
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1502859718420-7f61b0cba483?auto=format&fit=crop&w=600&q=80" alt="İskenderun"><div class="card-overlay"><h3>İskenderun Sahili</h3><p>Hatay • ⭐⭐⭐⭐☆</p></div></div>
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1528644498302-861a34a41300?auto=format&fit=crop&w=600&q=80" alt="Kapadokya"><div class="card-overlay"><h3>Kapadokya</h3><p>Nevşehir • ⭐⭐⭐⭐⭐</p></div></div>
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1524230572899-a752b6515c0e?auto=format&fit=crop&w=600&q=80" alt="Pamukkale"><div class="card-overlay"><h3>Pamukkale</h3><p>Denizli • ⭐⭐⭐⭐☆</p></div></div>
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1528646985452-3e284f18378d?auto=format&fit=crop&w=600&q=80" alt="Efes"><div class="card-overlay"><h3>Efes Antik Kenti</h3><p>İzmir • ⭐⭐⭐⭐⭐</p></div></div>
+                <div class="tall-card"><img src="https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=600&q=80" alt="Ayasofya"><div class="card-overlay"><h3>Ayasofya</h3><p>İstanbul • ⭐⭐⭐⭐⭐</p></div></div>
                 <div class="tall-card"><img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=600&q=80" alt="Ölüdeniz"><div class="card-overlay"><h3>Ölüdeniz</h3><p>Muğla • ⭐⭐⭐⭐⭐</p></div></div>
-            </div>
-        </section>
-
-        <section class="split-section">
-            <div class="split-images">
-                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80" class="img-large" alt="Travel">
-            </div>
-            
-            <div class="split-text-form">
-                <h2>Senin için mükemmel bir tatili<br>burada planla!</h2>
-                <p>Gittiğin yerleri değerlendirerek diğer kullanıcılara ilham olabilirsin.</p>
-                
-                <div class="dark-review-form">
-                    <div class="star-rating" id="stars">
-                        <span class="star" data-value="1">★</span>
-                        <span class="star" data-value="2">★</span>
-                        <span class="star" data-value="3">★</span>
-                        <span class="star" data-value="4">★</span>
-                        <span class="star" data-value="5">★</span>
-                    </div>
-                    <textarea id="comment-text" placeholder="Deneyimlerini bizimle paylaş..." rows="3"></textarea>
-                    <button id="submit-review" class="neon-btn">Yorumu Gönder</button>
-                </div>
-                
-                <div id="comments-list" class="recent-comments"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="dark-footer">
-        <p>Emirhan Tuğra Balcı -- 257351060</p>
-    </footer>
-
-    <div id="loginModal" class="modal-box hidden-element">
-        <button class="modal-close">×</button>
-        <h3>Sisteme Giriş</h3>
-        <input type="email" placeholder="E-posta Adresiniz">
-        <input type="password" placeholder="Şifreniz">
-        <button class="modal-submit" onclick="alert('Giriş başarılı!')">Giriş Yap</button>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // 1. AÇILIŞ MESAJI
-            alert("Hazırlayan: Emirhan Tuğra Balcı -- 257351060\nYerGez Premium'a Hoş Geldiniz!");
-
-            // 2. YILDIZ VE YORUM İŞLEMLERİ
-            const stars = document.querySelectorAll('.star');
-            const submitBtn = document.getElementById('submit-review');
-            const commentText = document.getElementById('comment-text');
-            const commentsList = document.getElementById('comments-list');
-            let selectedRating = 0;
-
-            if (stars.length > 0 && submitBtn) {
-                stars.forEach(star => {
-                    star.addEventListener('click', function() {
-                        selectedRating = parseInt(this.getAttribute('data-value'));
-                        stars.forEach(s => {
-                            s.classList.toggle('active', parseInt(s.getAttribute('data-value')) <= selectedRating);
-                        });
-                    });
-                });
-
-                submitBtn.addEventListener('click', function() {
-                    if (selectedRating === 0 || commentText.value.trim() === "") {
-                        alert("Lütfen puan verin ve yorum yazın!");
-                        return;
-                    }
-                    let starIcons = "★".repeat(selectedRating) + "☆".repeat(5 - selectedRating);
-                    const div = document.createElement('div');
-                    div.className = 'single-comment';
-                    div.innerHTML = `<div class="comment-stars">${starIcons}</div><p style="color: white;"><strong>Ziyaretçi:</strong> ${commentText.value}</p>`;
-                    
-                    commentsList.prepend(div);
-                    commentText.value = ""; selectedRating = 0;
-                    stars.forEach(s => s.classList.remove('active'));
-                });
-            }
-
-           // 3. GOOGLE MAPS ARAMA
-            const searchInput = document.getElementById('searchInput');
-            function searchLocation() {
-                if (searchInput && searchInput.value.trim() !== "") {
-                    // Hatalı uzantı silindi, resmi ve temiz Google Haritalar linki eklendi
-                    window.open(`https://www.google.com/maps?q=${encodeURIComponent(searchInput.value.trim())}`, '_blank');
-                    searchInput.value = '';
-                } else {
-                    alert("Lütfen aramak için bir mekan girin!");
-                }
-            }
-            if (searchInput) {
-                searchInput.addEventListener('keypress', e => { 
-                    if(e.key === 'Enter') searchLocation(); 
-                });
-            }
-
-            // 4. AÇILIR FORM
-            const openLogin = document.getElementById('openLogin');
-            const loginModal = document.getElementById('loginModal');
-            const pageOverlay = document.getElementById('pageOverlay');
-            const closeBtns = document.querySelectorAll('.modal-close');
-
-            function openModal(e) {
-                if(e) e.preventDefault();
-                if(loginModal && pageOverlay) {
-                    loginModal.classList.remove('hidden-element');
-                    pageOverlay.classList.remove('hidden-element');
-                }
-            }
-
-            function closeModal() {
-                if(loginModal && pageOverlay) {
-                    loginModal.classList.add('hidden-element');
-                    pageOverlay.classList.add('hidden-element');
-                }
-            }
-
-            if (openLogin) openLogin.addEventListener('click', openModal);
-            if (pageOverlay) pageOverlay.addEventListener('click', closeModal);
-            if (closeBtns.length > 0) {
-                closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
-            }
-        });
-    </script>
-</body>
-</html>
+                <div class="tall-card"><img src="
