@@ -1,3 +1,6 @@
+window.onload = function() {
+    alert("Emirhan Tuğra Balcı -- 257351060");
+};
 // Gerekli HTML elemanlarını seçiyoruz
 const stars = document.querySelectorAll('.star');
 const submitBtn = document.getElementById('submit-review');
