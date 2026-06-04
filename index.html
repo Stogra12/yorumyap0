@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YerGez - Premium Keşif</title>
-    <!-- v=8 yaparak önbelleği zorla yeniliyoruz -->
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -19,7 +18,6 @@
             <input type="text" id="searchInput" placeholder="Keşfetmek için mekan ara...">
         </div>
 
-        <!-- 6 SEKMELİ YENİ MENÜMÜZ -->
         <nav class="top-nav">
             <a href="index.html" class="active-link">Keşfet</a>
             <a href="hakkimizda.html">Hakkımızda</a>
@@ -88,7 +86,24 @@
                     <button id="submit-review" class="neon-btn">Yorumu Gönder</button>
                 </div>
                 
-                <div id="comments-list" class="recent-comments"></div>
+                <div id="comments-list" class="recent-comments">
+                    <div class="single-comment">
+                        <div class="comment-stars">★★★★★</div>
+                        <p style="color: white;"><strong>Berat Yılmaz:</strong> Kapadokya balon turu tek kelimeyle harikaydı, gün doğumu manzarasını asla unutamayacağım. Kesinlikle listeye eklenmeli.</p>
+                    </div>
+                    <div class="single-comment">
+                        <div class="comment-stars">★★★★☆</div>
+                        <p style="color: white;"><strong>Efe Kundakçı:</strong> İskenderun Sahili'nde yürüyüş yapmak ve deniz havası almak inanılmaz dinlendirici. Harika bir rota önerisi olmuş.</p>
+                    </div>
+                    <div class="single-comment">
+                        <div class="comment-stars">★★★★★</div>
+                        <p style="color: white;"><strong>Yusuf Buğra Gökçe:</strong> Efes Antik Kenti büyüleyici bir atmosfere sahip. Platform sayesinde gitmeden önce harika bir ön bilgi edindim.</p>
+                    </div>
+                    <div class="single-comment">
+                        <div class="comment-stars">★★★★★</div>
+                        <p style="color: white;"><strong>Ali Resul Arslan:</strong> Sümela Manastırı'nın o dik yamaca nasıl yapıldığına hala inanamıyorum. Trabzon'a yolu düşen herkes burayı görmeli.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -105,7 +120,6 @@
         <button class="modal-submit" onclick="alert('Giriş başarılı!')">Giriş Yap</button>
     </div>
 
-    <!-- TIKIR TIKIR ÇALIŞAN JS KODLARI -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
